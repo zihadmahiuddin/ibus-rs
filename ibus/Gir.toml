@@ -1,0 +1,216 @@
+[options]
+library = "IBus"
+version = "1.0"
+min_cfg_version = "1.0"
+target_path = "."
+girs_directories = ["/usr/share/gir-1.0/", "../gir-files/"]
+work_mode = "normal"
+single_version_file = true
+generate_safety_asserts = true
+deprecate_by_min_version = true
+generate_builder = true
+
+external_libraries = [
+  "GLib",
+  "GObject",
+  "Gio"
+]
+
+generate = [
+  "IBus.AttrList",
+  "IBus.Attribute",
+  "IBus.AttrType",
+  "IBus.AttrUnderline",
+  "IBus.Config",
+  "IBus.BusNameFlag",
+  "IBus.BusRequestNameReply",
+  "IBus.BusStartServiceByNameReply",
+  "IBus.Capabilite",
+  "IBus.Object",
+  "IBus.ConfigService",
+  "IBus.PropList",
+  "IBus.PreeditFocusMode",
+  "IBus.EngineSimple",
+  "IBus.Error",
+  "IBus.Factory",
+  "IBus.HotkeyProfile",
+  "IBus.InputHints",
+  "IBus.InputPurpose",
+  "IBus.Keymap",
+  "IBus.ModifierType",
+  "IBus.ObjectFlags",
+  "IBus.Orientation",
+  "IBus.PanelService",
+  "IBus.PropState",
+  "IBus.PropType",
+  "IBus.Proxy",
+  "IBus.Serializable",
+  "IBus.UnicodeDataLoadAsyncFinish",
+  "IBus.XEventType",
+  ]
+
+manual = [
+  "Gio.AsyncInitable",
+  "Gio.AsyncReadyCallback",
+  "Gio.AsyncResult",
+  "Gio.Cancellable",
+  "Gio.DBusProxy",
+  "Gio.DBusConnection",
+  "Gio.DBusInterface",
+  "Gio.Initable",
+
+  "GLib.Error",
+  "GLib.Quark",
+  "GLib.String",
+  "GLib.Variant",
+
+  "GObject.Object",
+
+  "IBus.ServiceClass",
+]
+
+[[object]]
+name = "IBus.*"
+status = "generate"
+  [[object.function]]
+  name = "free_strv"
+  ignore = true
+  [[object.constant]]
+  pattern = "*"
+  ignore = false
+
+
+[[object]]
+name = "IBus.InputContext"
+status = "generate"
+  [[object.function]]
+  name = "process_hand_writing_event"
+  ignore = true
+
+[[object]]
+name = "IBus.LookupTable"
+status = "generate"
+concurrency = "send+sync"
+  [[object.function]]
+  name = "set_orientation"
+  ignore = true
+
+[[object]]
+name = "IBus.EmojiData"
+status = "generate"
+  [[object.function]]
+  name = "save"
+  ignore = true
+  [[object.function]]
+  name = "set_annotations"
+  ignore = true
+
+[[object]]
+name = "IBus.Text"
+status = "generate"
+  [[object.function]]
+  name = "new_from_ucs4"
+  ignore = true
+
+[[object]]
+name = "IBus.UnicodeBlock"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "save"
+  ignore = true
+
+[[object]]
+name = "IBus.UnicodeData"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "save"
+  ignore = true
+  [[object.function]]
+  name = "load_async"
+  ignore = true
+
+[[object]]
+name = "IBus.XEvent"
+status = "generate"
+generate_builder = true
+
+[[object]]
+name = "IBus.Bus"
+status = "generate"
+generate_builder = true
+
+[[object]]
+name = "IBus.EngineDesc"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "output"
+  ignore = true
+
+[[object]]
+name = "IBus.Component"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "output"
+  ignore = true
+  [[object.function]]
+  name = "output_engines"
+  ignore = true
+
+[[object]]
+name = "IBus.ObservedPath"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "output"
+  ignore = true
+
+[[object]]
+name = "IBus.XML"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "output"
+  ignore = true
+
+[[object]]
+name = "IBus.Registry"
+status = "generate"
+generate_builder = true
+  [[object.function]]
+  name = "output"
+  ignore = true
+
+[[object]]
+name = "IBus.Service"
+status = "generate"
+generate_builder = true
+
+[[object]]
+name = "IBus.Engine"
+status = "generate"
+generate_builder = true
+  [[object.signal]]
+  name = "process-hand-writing-event"
+  inhibit = true
+
+[[object]]
+name = "IBus.Property"
+status = "generate"
+generate_builder = true
+
+[[object]]
+name = "IBus.ExtensionEvent"
+status = "generate"
+generate_builder = true
+
+[[object]]
+name = "IBus.ProcessKeyEventData"
+status = "manual"
+
+[[object]]
+name = "IBus.Rectangle"
+status = "manual"
